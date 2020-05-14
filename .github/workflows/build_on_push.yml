@@ -4,7 +4,7 @@ name: Test on Push
 on:
   push:
     branches:
-      - feature/*
+      - develop
 # jobs are run independently of one another
 jobs: 
   test:
@@ -14,9 +14,9 @@ jobs:
       # step runs a premade Action to checkout the repo
       - uses: actions/checkout@v2
       # custom steps that run in a shell
-      - name: Install Dependencies 
-        run: |
-          make dependencies.install
+      - name: Hello world
+	run: |
+	  echo "Hello World"
       - name: Run Tests
         run: |
           make test
