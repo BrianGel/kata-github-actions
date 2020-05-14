@@ -1,4 +1,4 @@
-# workflow name
+# workflow name new
 name: Test on Push
 # workflow is executed on every push to a feature branch
 on:
