@@ -1,0 +1,23 @@
+# workflow name
+name: Test on Push
+
+#workflow is ex
+on:
+	push:
+		branches:
+			-feature/*
+
+#jobs are run independently of one another
+jobs:
+	test:
+		#target machine on which job is run
+		runs-on: ubuntu-latest
+		steps:
+			#steps runs a premade action 
+			- name: Login to Docker Registry
+			  uses: azure/docker-login@v1
+			  with:
+				login-server: docker.pkg.github.com
+				username: $GITHUB_ACTOR
+				#Acces the github actors acces token
+				password: ${{ secrets.GITHUB_TOKEN }}
