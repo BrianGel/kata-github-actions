@@ -9,12 +9,14 @@ on:
 jobs: 
   test:
     # target machine on which job is run
-    runs-on: ubuntu-latest steps:
+    runs-on: ubuntu-latest 
+    steps:
       # step runs a premade Action to checkout the repo
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       # custom steps that run in a shell
-    - name: Install Dependencies run: |
-    make dependencies.install
-    - name: Run Tests
+      - name: Install Dependencies 
+        run: |
+          make dependencies.install
+      - name: Run Tests
         run: |
           make test
